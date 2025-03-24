@@ -1,4 +1,5 @@
-# Unixtime Converter
+Unixtime Converter
+==================
 
 The Unixtime Converter is a lightweight python program with a Tkinter-GUI. 
 It calculates local time or UTC into an unixtimestamp or vice versa. Basically 
