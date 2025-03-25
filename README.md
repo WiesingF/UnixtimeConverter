@@ -35,7 +35,6 @@ If you enjoy the program or want to buy me a coffee, you can do it with this lin
 [Buy me a coffee] (https://www.paypal.com/donate/?hosted_button_id=WRRNT8JXXLNGJ "Buy me a coffee")
 
 or you scan this QRcode:
-![Scan and buy me a coffee](BuyMeACoffee.png)
-..image:: BuyMeACoffee.png
+![Scan and buy me a coffee](BuyMeACoffee.png)  
 
 Thank you very much!
