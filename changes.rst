@@ -1,4 +1,14 @@
 ==================
+Version 1.0.3
+==================
+
+dropped file README.rst
+added link for online documentation in helpfiles
+changed name in setuptools to unixtime-converter
+dropped second licensefile in res
+
+
+==================
 Version 1.0.2
 ==================
 

@@ -2,13 +2,13 @@ from setuptools import setup
 
 
 setup(
-    name='Unixtime Converter',
-    version='1.0.2',
+    name='unixtime-converter',
+    version='1.0.3',
     author='Franz Wiesinger',
     author_email='py@roadrunnerserver.com',
     description='application for converting local time or UTC into Unixtime \
         and viceversa',
-    url='https://github.com/WiesingF/UnixtimeConverter',
+    url='https://docs.roadrunnerserver.com/unixtime/html/index.html',
     license='MIT license',
     packages=[
         'res',
