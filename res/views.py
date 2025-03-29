@@ -42,18 +42,21 @@ class ConvertView(tk.Frame):
             'time_loc': tk.StringVar()
         }
 
+        self.uxlogo = tk.PhotoImage(file='ux_logo_white_64.png')
+        self.lbl_logo = tk.Label(cont_m, image=self.uxlogo)
+
         cbx_tzvalues = t.DateTimeChecker.get_timezonelist()
 
         # create all widgets
         # labels column 0
         lbl_main = ttk.Label(
             cont_m, text='Unixtime Converter', font=af.fontheader,
-            anchor=tk.CENTER, justify=tk.CENTER, relief=tk.FLAT,
+            anchor='sw', justify=tk.CENTER, relief=tk.FLAT,
             padding=(15, 15)
         )
         lbl_timezone = tk.Label(
-            frame_tz, text="Timezone", anchor='w', relief='flat', padx=5,
-            pady=5, width=20, font=af.fontdefault
+            frame_tz, text="Timezone", anchor='w', relief='flat',
+            padx=5, pady=5, width=20, font=af.fontdefault
         )
         lbl_unixtime_utc = tk.Label(
             frame_ux, text="Unixtime (UTC)", anchor='w', relief='flat',
@@ -101,7 +104,7 @@ class ConvertView(tk.Frame):
 
         # buttons (column 2)
         btn_reset = ttk.Button(
-            frame_lbl, text='Reset', width=20,
+            frame_ux, text='Reset', width=20,
             command=lambda: t.CheckEntryData.reset_time_entries(self)
         )
         btn_time_unix = ttk.Button(
@@ -134,14 +137,16 @@ class ConvertView(tk.Frame):
         )
 
         # labels column 0
-        lbl_main.grid(column=0, row=0, rowspan=5, sticky=(tk.W + tk.E))
+        self.lbl_logo.grid(column=0, row=0, sticky=tk.W)
+        lbl_main.grid(column=1, row=0, rowspan=4, sticky=(tk.S + tk.W))
         lbl_timezone.grid(column=0, row=0, padx=5, pady=2, sticky=tk.W)
         lbl_isotimeformat.grid(column=0, row=0, padx=5, pady=2, sticky=tk.W)
         lbl_timeformat.grid(column=1, row=0, padx=0, pady=2, sticky=tk.W)
         lbl_time_local.grid(column=0, row=0, padx=5, pady=2, sticky=tk.W)
         lbl_time_utc.grid(column=0, row=0, padx=5, pady=2, sticky=tk.W)
         lbl_unixtime_utc.grid(column=0, row=0, padx=5, pady=2, sticky=tk.W)
-        btn_exit.grid(column=0, row=4, padx=5, pady=2, sticky=tk.W)
+        btn_exit.grid(column=0, row=4, padx=5, pady=3, sticky=tk.W)
+        btn_reset.grid(column=1, row=4, padx=5, pady=2, sticky=tk.W)
 
         # widgets column 1
         frame_tz.grid(column=0, row=5, sticky=(tk.W + tk.E))
@@ -164,7 +169,6 @@ class ConvertView(tk.Frame):
         )
 
         # buttons column 2
-        btn_reset.grid(column=2, row=0, padx=5, pady=2, sticky=tk.W)
         btn_time_loc.grid(column=2, row=0, padx=5, pady=2, sticky=tk.W)
         btn_time_utc.grid(column=2, row=0, padx=5, pady=2, sticky=tk.W)
         btn_time_unix.grid(column=2, row=0, padx=5, pady=2, sticky=tk.W)

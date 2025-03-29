@@ -23,6 +23,9 @@ class Application(tk.Tk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.title('Unixtime Converter')
+        self.uxicon_sm = tk.PhotoImage(file='ux_logo_white_16.png')
+        self.uxicon_med = tk.PhotoImage(file='ux_logo_white_32.png')
+        self.iconphoto(False, self.uxicon_med, self.uxicon_sm)
 
         # containers:
         container = tk.Frame(self, width=400)
@@ -102,7 +105,7 @@ class Application(tk.Tk):
         )
 
         self.txt_lic_text = html_st(
-            frame_body, html=RenderHTML('res/license.html')
+            frame_body, html=RenderHTML('license.html')
         )
 
         self.btn_close = ttk.Button(
