@@ -9,7 +9,7 @@ it can be used and downloaded by everybody. Unixtime is mainly used in the IT.
 
 ## Installation/Setup
 
-Currently the setup is only tested on linuxbased os with python3 minimumversion 3.7.
+Currently the setup is only tested on linuxbased os with python3 minimumversion 3.9
 To start the setup use pip:
 
     pip install Unixtime-converter

@@ -1,4 +1,15 @@
 ==================
+Version 1.0.4
+==================
+
+added logo to the view
+added icon
+added an icon and link for the startmenu
+moved reset button to the last row of the grid
+added license.md which is needed for the buildprocess
+
+
+==================
 Version 1.0.3
 ==================
 

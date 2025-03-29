@@ -3,7 +3,5 @@
 # python uses it by default - let it commentet out!
 
 datetime
-tkinter
 pytz
-zoneinfo
 tkhtmlview
