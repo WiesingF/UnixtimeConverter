@@ -6,8 +6,8 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "unixtime-converter"
-version = "1.0.4"
+name = "unix-time-converter"
+version = "1.0.5"
 dependencies = [
     "datetime",
     "pytz",

@@ -1,19 +1,17 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
-    name='unixtime-converter',
-    version='1.0.4',
+    name='unix-time-converter',
+    version='1.0.5',
     author='Franz Wiesinger',
     author_email='py@roadrunnerserver.com',
     description='application for converting local time or UTC into Unixtime \
         and viceversa',
     url='https://docs.roadrunnerserver.com/unixtime/html/index.html',
     # license_files=('LICENSE.md'),
-    packages=[
-        'res',
-        'tests'
-    ],
+    packages=find_packages(),
+    include_package_data=True,
     install_requires=[
         'datetime', 'pytz', 'tkhtmlview'
     ],
