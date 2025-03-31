@@ -12,6 +12,7 @@ import tkinter as tk
 from tkinter import ttk
 from . import tools as t
 from .constants import AppFonts as af
+import os
 
 
 class ConvertView(tk.Frame):
@@ -41,8 +42,11 @@ class ConvertView(tk.Frame):
             'time_utc': tk.StringVar(),
             'time_loc': tk.StringVar()
         }
-
-        self.uxlogo = tk.PhotoImage(file='ux_logo_white_64.png')
+        self.path_l = os.path.dirname(os.path.normpath(__file__))
+        self.logopath = os.path.join(
+            self.path_l, 'ux_logo_white_64.png'
+        )
+        self.uxlogo = tk.PhotoImage(file=self.logopath)
         self.lbl_logo = tk.Label(cont_m, image=self.uxlogo)
 
         cbx_tzvalues = t.DateTimeChecker.get_timezonelist()

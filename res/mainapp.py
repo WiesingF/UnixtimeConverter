@@ -15,6 +15,7 @@ from tkinter import messagebox
 from . constants import AppFonts as af
 from tkhtmlview import HTMLScrolledText as html_st
 from tkhtmlview import RenderHTML
+import os
 
 
 class Application(tk.Tk):
@@ -23,9 +24,12 @@ class Application(tk.Tk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.title('Unixtime Converter')
-        self.uxicon_sm = tk.PhotoImage(file='ux_logo_white_16.png')
-        self.uxicon_med = tk.PhotoImage(file='ux_logo_white_32.png')
-        self.iconphoto(False, self.uxicon_med, self.uxicon_sm)
+        self.rpath = os.path.dirname(os.path.normpath(__file__))
+        self.icopath_sm = os.path.join(self.rpath, 'ux_logo_white_16.png')
+        self.icopath_med = os.path.join(self.rpath, 'ux_logo_white_32.png')
+        self.ico_sm = tk.PhotoImage(file=self.icopath_sm)
+        self.ico_med = tk.PhotoImage(file=self.icopath_med)
+        self.iconphoto(False, self.ico_med, self.ico_sm)
 
         # containers:
         container = tk.Frame(self, width=400)
@@ -63,9 +67,6 @@ class Application(tk.Tk):
             row=0, padx=10, sticky=(tk.N + tk.S + tk.W + tk.E)
         )
 
-    def donothing(self):
-        pass
-
     def aboutbox(self):
         '''shows the box About... on click in menu'''
 
@@ -89,12 +90,17 @@ class Application(tk.Tk):
         self.license_dialog = tk.Toplevel(self)
         self.license_dialog.minsize(250, 300)
 
+        self.path_sm = os.path.dirname(os.path.normpath(__file__))
+        self.icopath_sm = os.path.join(self.path_sm, 'ux_logo_white_16.png')
+        self.ico_sm = tk.PhotoImage(file=self.icopath_sm)
+        self.license_dialog.iconphoto(False, self.ico_sm)
+
         container = tk.Frame(self.license_dialog)
         frame_head = tk.Frame(container)
         frame_body = tk.Frame(container)
 
         lbl_lic_header = tk.Label(
-            frame_body, text='Lincense', relief='flat', anchor=(tk.W),
+            frame_body, text='License', relief='flat', anchor=(tk.W),
             font=af.fontabout_header
         )
         lbl_lic_body = tk.Label(
@@ -104,8 +110,10 @@ class Application(tk.Tk):
             font=af.fontdefault
         )
 
+        self.lpath = os.path.dirname(__file__)
+        self.html_license = os.path.join(self.lpath, 'license.html')
         self.txt_lic_text = html_st(
-            frame_body, html=RenderHTML('license.html')
+            frame_body, html=RenderHTML(self.html_license)
         )
 
         self.btn_close = ttk.Button(
@@ -134,6 +142,11 @@ class Application(tk.Tk):
         self.help_dlg = tk.Toplevel(self)
         self.help_dlg.minsize(250, 300)
 
+        self.path_sm = os.path.dirname(os.path.normpath(__file__))
+        self.icopath_sm = os.path.join(self.path_sm, 'ux_logo_white_16.png')
+        self.ico_sm = tk.PhotoImage(file=self.icopath_sm)
+        self.help_dlg.iconphoto(False, self.ico_sm)
+
         dlgcontainer = tk.Frame(self.help_dlg)
         dlgframe_head = tk.Frame(dlgcontainer)
         dlgframe_body = tk.Frame(dlgcontainer)
@@ -148,10 +161,14 @@ class Application(tk.Tk):
             relief='flat', anchor=(tk.W),
             font=af.fontdefault
         )
+
+        self.hfile = os.path.join('res', 'help.html')
         self.txt_lic_text = html_st(
-            dlgframe_body, html=RenderHTML('res/help.html')
+            dlgframe_body, html=RenderHTML(self.hfile)
         )
 
+        self.html_helppath = os.path.dirname(__file__)
+        self.hfile = os.path.join(self.html_helppath, 'help.html')
         self.btn_close = ttk.Button(
             dlgframe_body, text='Close', width=15,
             command=self.btn_helpdlg_close
