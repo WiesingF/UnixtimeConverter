@@ -1,15 +1,13 @@
-## Unixtime Converter
+# Unixtime Converter
 
 The Unixtime Converter is a lightweight python program with a Tkinter-GUI. 
 It calculates local time or UTC into an unixtimestamp or vice versa. Basically 
 it can be used and downloaded by everybody. Unixtime is mainly used in the IT.
 
-![GUI of the application](uxconverter.png)
 
+# Installation/Setup
 
-## Installation/Setup
-
-### Prerequisites
+## Prerequisites
 
 Make sure that your python setup has minimumversion 3.9 and contains the libraries for tkinter. To get this information you can type in into a terminal the command python (it can be that you have to use python3) and hit enter. You shoud get something like this:
 
@@ -33,7 +31,7 @@ In the second line of the output you see the current version of python. As next 
 If you can see something like this you are ready for setup.
 
 
-### Proceed with installation
+## Proceed with installation
 
 Currently the setup is only tested on linuxbased os with python3 minimumversion 3.9. It is strongly recommended to install it into a virtual environment (venv).
 To start the setup use pip:
@@ -60,16 +58,6 @@ If you change one timefield (and both other timefields containing values) and yo
 
 done - that's it!
 
-See also the documentation online  
-[Read the documentation online] (https://docs.roadrunnerserver.com/unixtime/html/index.html)
+Read the documentation online (including Screenshots):
 
-
-## Donate
-
-If you enjoy the program or want to buy me a coffee, you can do it with this link:
-[Buy me a coffee] (https://www.paypal.com/donate/?hosted_button_id=WRRNT8JXXLNGJ "Buy me a coffee")
-
-or you scan this QRcode:
-![Scan and buy me a coffee](BuyMeACoffee.png)  
-
-Thank you very much!
+https://docs.roadrunnerserver.com/unixtime/html/index.html
